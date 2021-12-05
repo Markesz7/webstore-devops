@@ -3,7 +3,6 @@ language: java
 addons:
   sonarcloud:
     organization: "markesz7"
-    token:
-      secure: "SONAR_TOKEN"
+
 script:
   - sonar-scanner
