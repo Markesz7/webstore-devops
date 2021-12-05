@@ -49,7 +49,7 @@ public class ProductController {
     public void deleteProduct(@PathVariable("productId") Long id) {
         logger.info(String.format("DELETE request for id %s",id));
         storageService.deleteStorageByProductId(id);
-        productService.deleteProductById(id);
+        //productService.deleteProductById(id);
     }
 
     @Secured(User.ROLE_MODERATOR)
