@@ -48,7 +48,7 @@ public class ProductController {
     @DeleteMapping(path = "{productId}")
     public void deleteProduct(@PathVariable("productId") Long id) {
         logger.info(String.format("DELETE request for id %s",id));
-        storageService.deleteStorageByProductId(id);
+        //storageService.deleteStorageByProductId(id);
         //productService.deleteProductById(id);
     }
 
