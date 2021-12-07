@@ -6,7 +6,8 @@ addons:
     organization: "markesz7"
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Markesz7_webstore-devops
+  - mvn test
+  - mvn clean package
 
 deploy:
   provider: heroku
