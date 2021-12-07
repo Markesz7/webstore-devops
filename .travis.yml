@@ -4,6 +4,10 @@ jdk: openjdk11
 addons:
   sonarcloud:
     organization: "markesz7"
+    
+script:
+  - mvn test
+  - mvn clean package
 
 deploy:
   provider: heroku
