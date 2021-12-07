@@ -5,10 +5,6 @@ addons:
   sonarcloud:
     organization: "markesz7"
 
-script:
-  - mvn test
-  - mvn clean package
-
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
