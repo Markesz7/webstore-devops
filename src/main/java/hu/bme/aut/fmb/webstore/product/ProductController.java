@@ -50,7 +50,6 @@ public class ProductController {
         logger.info(String.format("DELETE request for id %s",id));
         storageService.deleteStorageByProductId(id);
         productService.deleteProductById(id);
-        String notInitalized;
     }
 
     @Secured(User.ROLE_MODERATOR)
