@@ -6,8 +6,12 @@ addons:
     organization: "markesz7"
     
 script:
-  - mvn test
   - mvn clean package
+
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker-compose build
+  - docker push markesz/webstore-devops
 
 deploy:
   provider: heroku
