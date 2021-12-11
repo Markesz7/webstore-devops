@@ -6,8 +6,7 @@ addons:
     organization: "markesz7"
     
 script:
-  - mvn sonar:sonar -Dsonar.projectKey=Markesz7_webstore-devops
-  - mvn clean package
+  - mvn clean package sonar:sonar -Dsonar.projectKey=Markesz7_webstore-devops
 
 after_success:
   - test $TRAVIS_BRANCH = "main" && test $TRAVIS_PULL_REQUEST = "false" &&
