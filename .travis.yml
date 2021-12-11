@@ -6,7 +6,8 @@ addons:
     organization: "markesz7"
     
 script:
-  - mvn clean package sonar:sonar -Dsonar.projectKey=Markesz7_webstore-devops
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Markesz7_webstore-devops
+  - mvn package
 
 after_success:
   - test $TRAVIS_BRANCH = "main" && test $TRAVIS_PULL_REQUEST = "false" &&
