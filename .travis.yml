@@ -7,7 +7,7 @@ addons:
     
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Markesz7_webstore-devops
-  - mvn package
+  - mvn package -Dmaven.test.skip
 
 after_success:
   - test $TRAVIS_BRANCH = "main" && test $TRAVIS_PULL_REQUEST = "false" &&
