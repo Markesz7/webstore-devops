@@ -11,7 +11,7 @@ script:
 
 after_success:
   - test $TRAVIS_BRANCH = "main" && test $TRAVIS_PULL_REQUEST = "false" &&
-    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD &&
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin &&
     docker-compose build &&
     docker push markesz/webstore-devops
 
