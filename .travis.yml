@@ -1,5 +1,7 @@
 language: java
 jdk: openjdk11
+services:
+  - docker
 
 addons:
   sonarcloud:
@@ -18,5 +20,7 @@ after_success:
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
-  on: main
+  on: 
+    branch: main
+    repo: markesz/webstore-devops
   app: webstore-devops
