@@ -22,5 +22,4 @@ deploy:
   api_key: $HEROKU_API_KEY
   on: 
     branch: main
-    repo: Markesz7/webstore-devops
   app: webstore-devops
